@@ -1,0 +1,25 @@
+*** Creating Trace Output File 'LED.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"main.o"'
+### List of Objects: adding '"stm32f0xx_gpio.o"'
+### List of Objects: adding '"stm32f0xx_rcc.o"'
+### List of Objects: adding '"led.o"'
+### List of Objects: adding '"delay.o"'
+### List of Objects: adding '".\startup_stm32f0xx_ld.o"'
+### List of Objects: adding '"system_stm32f0xx.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M0 "main.o" "stm32f0xx_gpio.o" "stm32f0xx_rcc.o" "led.o" "delay.o" ".\startup_stm32f0xx_ld.o" "system_stm32f0xx.o" --strict --scatter "LED.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\LED.map" -o "LED.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'LED.axf'
+### ADS-LD Command File: 'LED.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'LED.lnp', Handle=0x00000324
+### Writing '.lnp' file
+### ADS-LD Command file 'LED.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

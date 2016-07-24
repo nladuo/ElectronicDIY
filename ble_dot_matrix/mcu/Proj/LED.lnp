@@ -1,0 +1,13 @@
+--cpu Cortex-M0
+".\main.o"
+".\stm32f0xx_gpio.o"
+".\stm32f0xx_rcc.o"
+".\led.o"
+".\delay.o"
+".\startup_stm32f0xx_ld.o"
+".\system_stm32f0xx.o"
+".\matrix.o"
+--strict --scatter ".\LED.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\LED.map" -o .\LED.axf
