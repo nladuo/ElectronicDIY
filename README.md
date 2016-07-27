@@ -1,85 +1,35 @@
 # IoT-DIY
 做过的一些和物联网有关的DIY。
 
-## DIY01——蓝牙小车
-### 时间
-大二上
+## [DIY01——蓝牙小车](./01蓝牙小车)
 ### 状态
 未整理
+### 图片
+#### 小车
+![](01蓝牙小车/smartcar.jpg)
+#### 安卓 APP
+![](01蓝牙小车/blesmartcar_android.jpg)
 
-### 使用的技术
-- stm8单片机基于寄存器开发
-- 蓝牙操作
-- android开发
+## [DIY02——点阵控制器](./02点阵控制器)
+### 状态
+未整理
+### 图片
+#### 安卓 APP
+![](02点阵控制器/dot_matrix_android.jpg)
+#### iOS APP
+![](02点阵控制器/dot_matrix_iOS.jpg)
 
-### 单片机
-- 型号: STM8S103F3P6
-- IDE:  IAR for STM8
+## [DIY03——PM2.5检测仪](./03PM2.5检测仪)
+详情见： http://nladuo.github.io/2015/12/09/%E6%95%99%E4%BD%A0DIY%E4%B8%80%E4%B8%AAPM2.5%E6%A3%80%E6%B5%8B%E4%BB%AA/
+### 状态
+未整理
+### 图片
+#### iOS APP
+![](03PM2.5检测仪/pm25_iOS.jpg)  
 
-### Android APP
-使用eclipse编写
 
-### iOS APP
+## [DIY04——室内传感器监控](./室内传感器监控)
+### 状态
+开发中
+### 图片
 暂无
-
-## DIY02——点阵控制器
-### 时间
-大二下
-### 状态
-未整理
-
-### 使用的技术
-- stm32f0系列单片机基于库函数开发
-- 蓝牙4.0操作
-- android开发
-- iOS开发
-
-### 单片机
-- 型号: STM32F030F4P6
-- IDE:  keil5 for arm
-
-### Android APP
-使用eclipse编写
-
-### iOS APP
-使用Objective-C编写，找不着了。
-
-
-## DIY03——PM2.5检测仪
-### 时间
-大三上
-### 状态
-未整理
-
-### 使用的技术
-- 蓝牙4.0操作
-- android开发
-- iOS开发
-
-### Android APP
-使用eclipse编写
-
-### iOS APP
-使用Objective-C编写。
-
-## DIY04——室内传感器监控
-### 时间
-大三下
-### 状态
-未开始
-
-### 使用的技术
-- arduino开发
-- 以太网相关操作
-- go语言编写web站点
-
-### 单片机
-使用arduino ide开发
-
-### 网站
-#### 前端
-使用echart + viewjs
-#### 后端
-使用go语言web框架——gin
-
-
