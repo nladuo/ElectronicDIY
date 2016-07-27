@@ -1,3 +1,6 @@
+/**
+ * ENC28J60以太网模块
+ */
 #include <EtherCard.h>
 
 // ethernet interface mac address, must be unique on the LAN
@@ -8,20 +11,7 @@ byte Ethernet::buffer[700];
 static byte session;
 static uint32_t timer;
 
-static void sendHttpGet () {
-  Serial.println("Sending HttpGet...");
-
-  Stash::prepare(PSTR("GET /update HTTP/1.0" "\r\n"
-    "Host: 123.56.207.154:8000 " "\r\n"
-    "\r\n"));
-
-  session = ether.tcpSend();
-  Serial.println("finished");  
-}
-void setup () {
-  Serial.begin(57600);
-  Serial.println("httpGet demo");
-
+static void setUpEthernet(){
   if (ether.begin(sizeof Ethernet::buffer, mymac, 10) == 0) 
     Serial.println("Failed to access Ethernet controller");
   else
@@ -38,12 +28,21 @@ void setup () {
   //设置服务器ip和端口号
   ether.copyIp(ether.hisip, server_ip);
   ether.hisport = 80;
-
-  
 }
 
-void loop () {
-  if (millis() > timer) {
+static void sendHttpGet () {
+  Serial.println("Sending HttpGet...");
+  Stash::prepare(PSTR("GET /update HTTP/1.0" "\r\n"
+    "Host: 123.56.207.154:8000 " "\r\n"
+    "\r\n"));
+
+  session = ether.tcpSend();
+  Serial.println("finished");  
+}
+
+
+void etherLoop(){
+   if (millis() > timer) {
     timer = millis() + 2000;
     //发送请求
     sendHttpGet();
@@ -57,5 +56,5 @@ void loop () {
     Serial.println(reply);
     Serial.println();
   }
-  
 }
+
