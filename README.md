@@ -20,12 +20,10 @@
 ![](02点阵控制器/dot_matrix_iOS.jpg)
 
 ## [DIY03——PM2.5检测仪](./03PM2.5检测仪)
-详情见： http://nladuo.github.io/2015/12/09/%E6%95%99%E4%BD%A0DIY%E4%B8%80%E4%B8%AAPM2.5%E6%A3%80%E6%B5%8B%E4%BB%AA/
 ### 状态
 未整理
 ### 图片
-#### iOS APP
-![](03PM2.5检测仪/pm25_iOS.jpg)  
+详情见： http://nladuo.github.io/2015/12/09/%E6%95%99%E4%BD%A0DIY%E4%B8%80%E4%B8%AAPM2.5%E6%A3%80%E6%B5%8B%E4%BB%AA/
 
 
 ## [DIY04——室内传感器监控](./室内传感器监控)
