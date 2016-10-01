@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <kalen.app.bluetooth.smartcar.view.Rudder
+        android:id="@+id/rudder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="280dip"
+        android:layout_marginTop="30dip"
+        ></kalen.app.bluetooth.smartcar.view.Rudder>
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="170dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_modechoose"
+        android:layout_marginTop="28dp"
+        android:layout_alignLeft="@+id/btn_connect"
+        android:layout_weight="1"
+        android:background="@drawable/btn2_style"
+        android:onClick="onQuitButtonClicked"
+        android:text="退出程序"
+        android:textColor="#ffffff"
+        android:textSize="22dip"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_modechoose"
+        android:layout_width="170dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_connect"
+        android:layout_marginTop="28dp"
+        android:layout_weight="1"
+        android:background="@drawable/btn2_style"
+        android:onClick="onModeChooseButtonClicked"
+        android:layout_alignLeft="@+id/btn_connect"
+        android:text="模式选择"
+        android:textColor="#ffffff"
+        android:textSize="22dip"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_connect"
+        android:layout_width="170dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvwShow"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="30dip"
+        android:layout_weight="1"
+        android:background="@drawable/btn2_style"
+        android:onClick="onConnectButtonClicked"
+        android:text="连接设备"
+        android:textColor="#ffffff"
+        android:textSize="22dip"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvw_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rudder"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="34dp"
+        android:text="TextView"
+        android:textSize="25sp" />
+
+</RelativeLayout>

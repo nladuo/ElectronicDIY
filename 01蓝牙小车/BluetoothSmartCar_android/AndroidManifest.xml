@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="kalen.app.bluetooyh.smartcar"
+      android:versionCode="1"
+      android:versionName="2.0">
+    <application 
+        android:icon="@drawable/icon" 
+        android:label="蓝牙小车控制器">
+        <activity 
+            android:name="kalen.app.bluetooth.smartcar.ui.MainActivity"
+            android:label="蓝牙小车控制器">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="kalen.app.bluetooth.smartcar.ui.DeviceListActivity"
+                  android:label="选取连接设备"
+                  android:theme="@android:style/Theme.Dialog"
+                  android:configChanges="orientation|keyboardHidden" />
+        
+        <activity android:name="kalen.app.bluetooth.smartcar.ui.ModeChooseActivity"
+                  android:label="控制模式选择"
+                  android:theme="@android:style/Theme.Dialog"
+                  android:configChanges="orientation|keyboardHidden" />
+
+    </application>
+    <uses-sdk android:minSdkVersion="14" />
+        <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+</manifest> 
