@@ -10,14 +10,14 @@
 #### 安卓 APP
 ![](01蓝牙小车/BleSmartCar_android.jpg)
 
-## [DIY02——点阵控制器](./02点阵控制器)
+## [DIY02——涂鸦点阵](./02涂鸦点阵)
 ### 状态
 代码已整理
 ### 图片
 #### 安卓 APP
-![](02点阵控制器/DotMatrix_android.jpg)
+![](02涂鸦点阵/DoodleMatrix_android.jpg)
 #### iOS APP
-![](02点阵控制器/DotMatrix_iOS.jpg)
+![](02涂鸦点阵/DoodleMatrix_iOS.jpg)
 
 ## [DIY03——PM2.5检测仪](./03PM2.5检测仪)
 ### 状态
