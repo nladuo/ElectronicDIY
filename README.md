@@ -30,8 +30,8 @@
 和DIY3相比，Android使用Android Studio重构，支持Android6.0的权限系统，iOS使用swift3+cocospod构建。  
 传感器改用攀藤G5S，可以同时测PM2.5和甲醛的含量。
 ### 状态
-未编写
+待开发
 
-## [DIY05——幻彩灯带]
+## [DIY05——幻彩灯带](./05-幻彩灯带)
 ### 状态
 未整理
