@@ -25,7 +25,7 @@
 ### 图片
 详情见： [教你DIY一个PM2.5检测仪](http://nladuo.github.io/2015/12/09/%E6%95%99%E4%BD%A0DIY%E4%B8%80%E4%B8%AAPM2.5%E6%A3%80%E6%B5%8B%E4%BB%AA/)
 
-## [DIY04——PM2.5检测仪2.0]
+## [DIY04——PM2.5检测仪2.0](./04-PM2.5检测仪2.0)
 ### 说明
 和DIY3相比，Android使用Android Studio重构，支持Android6.0的权限系统。  
 传感器改用攀藤G5S，可以同时测PM2.5和甲醛的含量。

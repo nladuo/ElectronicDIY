@@ -1,5 +1,6 @@
 # DIY04——PM2.5检测仪2.0
-
+和DIY3相比，Android使用Android Studio重构，支持Android6.0的权限系统。  
+传感器改用攀藤G5S，可以同时测PM2.5和甲醛的含量。
 ## 时间
 大四下
 
