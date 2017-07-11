@@ -10,10 +10,9 @@
 ## 使用的技术
 - 蓝牙4.0操作
 - android开发
-- iOS开发
 
 ## Android APP
 使用Android Studio编写
 
 ## iOS APP
-使用Objective-C编写。
+未开发

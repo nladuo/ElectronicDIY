@@ -3,33 +3,42 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ScrollView 
-            android:layout_width="match_parent"
-            android:layout_height="0dp" 
-            android:layout_weight="1">
-            <TextView 
-            android:id="@+id/control_receive_data_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        </ScrollView>
+        <!--<ScrollView -->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp" -->
+            <!--android:layout_weight="1">-->
+            <!--<TextView -->
+            <!--android:id="@+id/control_receive_data_tv"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--</ScrollView>-->
 
-        <LinearLayout 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <!--<LinearLayout -->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
 
-            <EditText
-                android:id="@+id/control_send_data_et"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:hint="@string/control_send_hint"
-                android:layout_height="wrap_content"/>
+            <!--<EditText-->
+                <!--android:id="@+id/control_send_data_et"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:hint="@string/control_send_hint"-->
+                <!--android:layout_height="wrap_content"/>-->
 
-            <Button
-                android:id="@+id/control_send_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/control_send"/>
-        </LinearLayout>
+            <!--<Button-->
+                <!--android:id="@+id/control_send_btn"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/control_send"/>-->
+        <!--</LinearLayout>-->
+
+    <TextView
+        android:paddingTop="100dp"
+        android:layout_margin="10dp"
+        android:id="@+id/display_tv"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
     
 </LinearLayout>

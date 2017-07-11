@@ -31,8 +31,7 @@ import kalen.app.iot.blepm25.model.C;
 public class DeviceControlActivity extends AppCompatActivity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
 
-    private TextView mRecieveDataTView;
-    private EditText mSendDataEditText;
+    private TextView mDisplayTView;
     private String mDeviceAddress;
     private String mDeviceName;
     private BluetoothLeService mBluetoothLeService;
@@ -98,37 +97,36 @@ public class DeviceControlActivity extends AppCompatActivity {
         //获取设备名以及设备地址
         mDeviceName = intent.getStringExtra(C.EXTRAS_DEVICE_NAME);
         mDeviceAddress = intent.getStringExtra(C.EXTRAS_DEVICE_ADDRESS);
-        
-        mRecieveDataTView = (TextView) findViewById(R.id.control_receive_data_tv);
-        mSendDataEditText = (EditText) findViewById(R.id.control_send_data_et);
-        
+
+        mDisplayTView = (TextView) findViewById(R.id.display_tv);
+
         getSupportActionBar().setTitle(mDeviceName);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //绑定BLE服务
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
-        //点击发送按钮
-        findViewById(R.id.control_send_btn).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				//没连接,直接返回
-				if (!mConnected) {
-					Toast.makeText(DeviceControlActivity.this, "设备尚未连接", 
-							Toast.LENGTH_SHORT).show();
-					return;
-				}
-				
-				//没找到对应的特征值,直接返回
-				if (mCharacteristic == null) {
-					Toast.makeText(DeviceControlActivity.this, "没有找到对应的特征值,请尝试重新连接", 
-							Toast.LENGTH_SHORT).show();
-					return;
-				}
-				
-				String dataStr = mSendDataEditText.getText().toString();
-				sendStrDataToLeDevice(dataStr);
-			}
-		});
+//        //点击发送按钮
+//        findViewById(R.id.control_send_btn).setOnClickListener(new OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				//没连接,直接返回
+//				if (!mConnected) {
+//					Toast.makeText(DeviceControlActivity.this, "设备尚未连接",
+//							Toast.LENGTH_SHORT).show();
+//					return;
+//				}
+//
+//				//没找到对应的特征值,直接返回
+//				if (mCharacteristic == null) {
+//					Toast.makeText(DeviceControlActivity.this, "没有找到对应的特征值,请尝试重新连接",
+//							Toast.LENGTH_SHORT).show();
+//					return;
+//				}
+//
+//				String dataStr = mSendDataEditText.getText().toString();
+//				sendStrDataToLeDevice(dataStr);
+//			}
+//		});
     }
 
     @Override
@@ -204,20 +202,59 @@ public class DeviceControlActivity extends AppCompatActivity {
     			Toast.LENGTH_SHORT).show();
     }
 
+    private byte[] buffer = new byte[30];
+
+    private void shiftLeft(byte lastNum){
+        for (int i = 0; i < 29; i++) {
+            buffer[i] = buffer[i + 1];
+        }
+        buffer[29] = lastNum;
+    }
+
+    private boolean checkOutOneSequence(){
+        return (buffer[0] == 0x42) && (buffer[1] == 0x4D) && (buffer[2] == 0x00) && (buffer[3] == 0x1C);
+    }
+
+    private int turnByteToInt(byte val){
+        return val & 0xFF;
+    }
+
+
+    private int getIntValByTwoBytes(byte high, byte low){
+        int retVal = turnByteToInt(low);
+        retVal += turnByteToInt(high) * 256;
+        System.out.println(low & 0xFF);
+        System.out.println("high ---> " + (high & 0xFF));
+        return retVal;
+    }
+
     /**
      * 接收到数据的回调
      * @param bytes
      */
     private void onReceiveData(byte[] bytes) {
-    	String data = new String(bytes);
-        try {
-            data = data.substring(0, data.lastIndexOf("\n"));
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (bytes != null) {
+            for (int i = 0; i < bytes.length; i++) {
+                byte nowNum = bytes[i];
+                shiftLeft(nowNum);
+                if (checkOutOneSequence()) {
+                    String text = "美国标准:\n";
+                    text += "PM1.0 : " + getIntValByTwoBytes(buffer[4], buffer[5]) + "ug/m3\n";
+                    text += "PM2.5 : " + getIntValByTwoBytes(buffer[6], buffer[7]) + "ug/m3\n";
+                    text += "PM10 : " + getIntValByTwoBytes(buffer[8], buffer[9]) + "ug/m3\n";
+                    text += "\n中国标准:\n";
+                    text += "PM1.0 : " + getIntValByTwoBytes(buffer[10], buffer[11]) + "ug/m3\n";
+                    text += "PM2.5 : " + getIntValByTwoBytes(buffer[12], buffer[13]) + "ug/m3\n";
+                    text += "PM10 : " + getIntValByTwoBytes(buffer[14], buffer[15]) + "ug/m3\n";
+
+                    text += "\n\n甲醛:" + (float)(getIntValByTwoBytes(buffer[28], buffer[29]))/1000 + "mg/m3\n";
+                    mDisplayTView.setText(text);
+                }
+            }
         }
-        StringBuffer sb = new StringBuffer(mRecieveDataTView.getText().toString());
-        mRecieveDataTView.setText(sb.append(data).toString());
     }
+
+
 
     /**
      * 获取BLE的特征值
