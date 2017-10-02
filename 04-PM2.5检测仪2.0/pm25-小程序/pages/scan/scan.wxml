@@ -1,0 +1,39 @@
+<!--pages/scan/scan.wxml-->
+<!-- <view>
+  <text>设备列表</text>
+</view> -->
+<!-- <view wx:for="{{device_list}}" wx:for-item="item" 
+         data-title="{{item.deviceId}}" 
+         data-name="{{item.name}}" 
+         data-advertisData="{{item.advertisServiceUUIDs}}" 
+         wx:key="{{item.deviceId}}"
+         bindtap="bindViewTap">
+    
+    <view class="item">
+      {{item.name}}
+      <view class="ss"></view>
+    </view>   
+       
+</view> -->
+
+
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">设备名称</view>
+    <view class="th">RSSI</view>
+  </view>
+  <view wx:for="{{device_list}}" wx:for-item="device" 
+            data-title="{{device.deviceId}}"
+            data-name="{{device.name}}"
+            wx:key="{{device.deviceId}}"
+            bindtap="bindViewTap">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{device.name}}</view>
+      <view class="td">{{device.RSSI}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{device.name}}</view>
+      <view class="td">{{device.RSSI}}</view>
+    </view> 
+  </view>
+</view>

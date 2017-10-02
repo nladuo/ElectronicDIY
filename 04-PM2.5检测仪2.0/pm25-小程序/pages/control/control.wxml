@@ -1,0 +1,7 @@
+<!--pages/control/control.wxml-->
+<view class='section'>
+  <text class='header'>测量结果：</text>
+  <view class='result'>
+    <text>{{ result }}</text>
+  </view>
+</view>

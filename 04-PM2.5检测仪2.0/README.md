@@ -1,18 +1,19 @@
 # DIY04——PM2.5检测仪2.0
-和DIY3相比，Android使用Android Studio重构，支持Android6.0的权限系统。  
-传感器改用攀藤G5S，可以同时测PM2.5和甲醛的含量。
+
 ## 时间
-大四下
+研一
 
 ## 状态
 已完成
 
 ## 使用的技术
 - 蓝牙4.0操作
-- android开发
+- 小程序开发技术
+- 安卓开发技术
 
-## Android APP
-使用Android Studio编写
+## 小程序
+支持攀藤G5S和攀藤G10，其他的应该也支持。
 
-## iOS APP
-未开发
+## Android
+和DIY3相比，Android使用Android Studio重构，支持Android6.0的权限系统。  
+传感器改用攀藤G5S，可以同时测PM2.5和甲醛的含量。

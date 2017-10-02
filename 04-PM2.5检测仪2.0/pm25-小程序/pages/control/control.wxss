@@ -1,0 +1,20 @@
+/* pages/control/control.wxss */
+
+.section {
+ margin: 5px;
+}
+
+.header {
+  font-size: 25px;
+}
+
+.result {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.result text {
+  font-size: 20px;
+}
