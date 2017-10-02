@@ -38,3 +38,6 @@
 已完成
 ### 效果
 ![](05-幻彩灯带/ColorfulLED.gif)
+
+# LICENSE
+GPLv3
