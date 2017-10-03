@@ -9,6 +9,8 @@
 ![](01-蓝牙小车/SmartCar.jpg)
 #### 安卓 APP
 ![](01-蓝牙小车/BleSmartCar_android.jpg)
+#### 效果
+![](01-蓝牙小车/BleSmartCar.gif)
 
 ## [DIY02——涂鸦点阵](./02-涂鸦点阵)
 ### 状态
