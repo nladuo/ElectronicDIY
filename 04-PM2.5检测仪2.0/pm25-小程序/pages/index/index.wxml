@@ -5,8 +5,7 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
   <view class="usermotto">
-    <switch checked bindchange="swithChanged" wx:if="{{isG5S}}"/>
-    <switch bindchange="swithChanged" wx:else/>
+  <switch bindchange="swithChanged"/> 
     包含甲醛
     <view class='btn' bindtap="goScan">
       <button>连接蓝牙设备</button>

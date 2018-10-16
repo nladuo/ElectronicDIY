@@ -13,7 +13,7 @@ const shiftLeft = (lastNum) => {
  * 判断是否为一组数据
  */
 const checkOutOneSequence = () => {
-  return (buffer[0] == 0x42) && (buffer[1] == 0x4D) && (buffer[2] == 0x00) && (buffer[3] == 0x1C);
+  return (buffer[0] == 0x42) && (buffer[1] == 0x4D); //&& (buffer[2] == 0x00) && (buffer[3] == 0x1C);
 }
 /**
  * 获取一组数据

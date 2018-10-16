@@ -1,6 +1,8 @@
 // pages/control/control.js
 import { updateBuffer } from "./data"
 
+let app = getApp();
+
 Page({
   data: {
     deviceId: '',           // BLE设备id
@@ -18,8 +20,9 @@ Page({
     console.log('name=' + options.name);
     that.setData({deviceId: options.deviceId});
     // 读传感器类型
-    let value = wx.getStorageSync('甲醛')
-    that.setData({isG5S: value});
+    // let value = wx.getStorageSync('isG5S')
+    console.log('isG5S=' + app.globalData.isG5S);
+    that.setData({ isG5S: app.globalData.isG5S });
     /**
      * 设置NavigationBar的Title
      */
